@@ -1,0 +1,11 @@
+h1 {
+  text-align: center;
+  font-family: 'Space Mono', monospace;
+}
+
+h2 {
+  font-size: 48px;
+  font-family: 'Space Mono', monospace;
+  text-align: center;
+  font-weight: lighter;
+}

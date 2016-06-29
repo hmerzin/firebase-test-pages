@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>firebase quickstart</title>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+
+</head>
+<body>
+  <h1 id ='bigOne'></h1>
+  <h2 id ='littleOne'></h2>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD4mhITWy9JGEU7fydmfFoiJVrRi_vDEYI",
+    authDomain: "codebase-fc382.firebaseapp.com",
+    databaseURL: "https://codebase-fc382.firebaseio.com",
+    storageBucket: "codebase-fc382.appspot.com",
+  };
+
+  firebase.initializeApp(config);
+
+  var bigOne = document.getElementById('bigOne');
+  var dbRef = firebase.database().ref().child('head');
+  dbRef.on('value', snap => bigOne.innerText = snap.val());
+  var littleOne = document.getElementById('littleOne')
+  var littleDBRef = firebase.database().ref().child('otherthing')
+  littleDBRef.on('value', snap => littleOne.innerText = snap.val());
+
+</script>
+</body>
+</html>
